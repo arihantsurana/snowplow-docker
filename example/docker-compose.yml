@@ -31,13 +31,13 @@ services:
     depends_on:
       - nsqd
     ports:
-      - "80:80"
+      - "9080:9080"
     volumes:
       - ./scala-stream-collector-config:/snowplow/config
     logging:
       options:
-        max-size: 1M
-        max-file: 10
+        max-size: "1M"
+        max-file: "10"
     deploy:
       resources:
         limits:
@@ -64,8 +64,8 @@ services:
       - ./stream-enrich-config:/snowplow/config
     logging:
       options:
-        max-size: 1M
-        max-file: 10
+        max-size: "1M"
+        max-file: "10"
     deploy:
       resources:
         limits:
